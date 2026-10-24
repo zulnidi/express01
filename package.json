@@ -1,21 +1,39 @@
 {
-  "name": "musica",
+  "name": "canciones-api",
   "version": "1.0.0",
+  "description": "API REST de canciones con Express 5, Mongoose y arquitectura por capas",
   "type": "module",
-  "main": "index.js",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon --watch src --exec node src/server.js"
+    "dev": "nodemon --watch src src/server.js",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "mongoose": "^8.19.4"
+    "express-rate-limit": "^8.0.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.19.4",
+    "zod": "^4.1.0"
   },
   "devDependencies": {
-    "cross-env": "^10.1.0",
+    "@eslint/js": "^9.39.1",
+    "@vitest/coverage-v8": "^5.0.5",
     "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
     "nodemon": "^3.1.11",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "supertest": "^7.1.0",
+    "vitest": "^5.0.5"
   }
 }
